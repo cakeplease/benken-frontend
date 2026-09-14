@@ -37,6 +37,7 @@ on:
   push:
     branches:
       - '"main"'
+  workflow_dispatch:
 
 env:
   PROJECT_ID: 'project-ff3845a8-74ef-4b64-920' # TODO: update to your Google Cloud project ID
