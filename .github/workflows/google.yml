@@ -89,6 +89,12 @@ jobs:
           cluster_name: '${{ env.GKE_CLUSTER }}'
           location: '${{ env.GKE_ZONE }}'
 
+      # Check auth
+      - name: Check authenticated identity
+        run: |
+          gcloud auth list
+          ``
+
       # Build the Docker image
       - name: 'Build and push Docker container'
         run: |-
