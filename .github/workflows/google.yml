@@ -105,10 +105,10 @@ jobs:
           docker push "${DOCKER_TAG}"
 
       # Set up kustomize
-      - name: 'Set up Kustomize'
-        run: |-
-          curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv5.8.1/kustomize_v5.8.1_linux_amd64.tar.gz
-          chmod u+x ./kustomize
+     # - name: 'Set up Kustomize'
+      #  run: |-
+       #   curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv5.8.1/kustomize_v5.8.1_linux_amd64.tar.gz
+       #   chmod u+x ./kustomize
           
       # Set up kustomize
       #- name: Setup Kustomize
@@ -128,7 +128,7 @@ jobs:
       #Deploy to GKE
       - name: Deploy to GKE
         run: |-
-          kubectl set image deployment/$DEPLOYMENT_NAME \ 
-          $DEPLOYMENT_NAME=$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:$GITHUB_SHA \
+          kubectl set image deployment/$DEPLOYMENT_NAME \
+          benken-frontend=$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:$GITHUB_SHA \
           kubectl rollout status deployment/$DEPLOYMENT_NAME \
           kubectl get services -o wide
