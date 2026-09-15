@@ -120,26 +120,13 @@ jobs:
         run: |-
           DOCKER_TAG="${GAR_LOCATION}-docker.pkg.dev/${PROJECT_ID}/${REPOSITORY}/${IMAGE}:${GITHUB_SHA}"
 
-          docker buildx build \
-            --platform linux/amd64  \
+          docker build \
             --tag "${DOCKER_TAG}" \
             --build-arg GITHUB_SHA="${GITHUB_SHA}" \
             --build-arg GITHUB_REF="${GITHUB_REF}" \
             .
 
           docker push "${DOCKER_TAG}"
-
-      # Debug kustomize
-     # - name: Debug kustomize
-    #    run: |
-     #     ls -l ./kustomize
-      #    file ./kustomize
-       #   uname -a
-
-      - name: Debug workspace
-        run: |
-          pwd
-          find . -name "kustomize" -type f
 
       # Set up kustomize
       - name: 'Set up Kustomize'
