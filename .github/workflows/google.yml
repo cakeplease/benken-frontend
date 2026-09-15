@@ -73,9 +73,7 @@ jobs:
         with:
           service_account: 'github@project-ff3845a8-74ef-4b64-920.iam.gserviceaccount.com'
           workload_identity_provider: '${{ env.WORKLOAD_IDENTITY_PROVIDER }}'
-          token_format: access_token # this is needed
-          
-      #- uses: google-github-actions/setup-gcloud@v3
+          token_format: access_token # this is needed!! and has to be the same as in the password on docker login action :')
 
       # Authenticate Docker to Google Cloud Artifact Registry
       - name: 'Docker Auth'
@@ -115,7 +113,7 @@ jobs:
       # Set up kustomize
       - name: 'Set up Kustomize'
         run: |-
-          curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv5.4.3/kustomize_v5.8.1_linux_arm64.tar.gz
+          curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv5.4.3/kustomize_v5.8.1_linux_amd64.tar.gz
           chmod u+x ./kustomize
 
       # Deploy the Docker image to the GKE cluster
