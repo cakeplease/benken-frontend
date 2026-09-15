@@ -129,6 +129,6 @@ jobs:
       - name: Deploy to GKE
         run: |-
           kubectl set image deployment/$DEPLOYMENT_NAME \
-          benken-frontend-sha256-1=$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:$GITHUB_SHA \
-          kubectl rollout status deployment/$DEPLOYMENT_NAME \
+          benken-frontend-sha256-1=$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:$GITHUB_SHA
+          kubectl rollout status deployment/$DEPLOYMENT_NAME
           kubectl get services
