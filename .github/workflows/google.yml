@@ -136,6 +136,11 @@ jobs:
           file ./kustomize
           uname -a
 
+      - name: Debug workspace
+        run: |
+          pwd
+          find . -name "kustomize" -type f
+
       # Set up kustomize
       - name: 'Set up Kustomize'
         run: |-
