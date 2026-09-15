@@ -128,4 +128,7 @@ jobs:
       #Deploy to GKE
       - name: Deploy to GKE
         run: |-
-          kubectl set image deployment/$DEPLOYMENT_NAME \ $DEPLOYMENT_NAME=$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:$GITHUB_SHA
+          kubectl set image deployment/$DEPLOYMENT_NAME \ 
+          $DEPLOYMENT_NAME=$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:$GITHUB_SHA \
+          kubectl rollout status deployment/$DEPLOYMENT_NAME \
+          kubectl get services -o wide
