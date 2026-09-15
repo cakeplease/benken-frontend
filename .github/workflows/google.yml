@@ -100,6 +100,17 @@ jobs:
           gcloud auth list
           ``
 
+      # Authenticate
+      - name: Authenticate
+        run: |
+         gcloud auth login github@project-ff3845a8-74ef-4b64-920.iam.gserviceaccount.com
+
+       # Check auth again
+      - name: Check authenticated identity (again)
+        run: |
+          gcloud auth list
+          ``
+
       # Build the Docker image
       - name: 'Build and push Docker container'
         run: |-
