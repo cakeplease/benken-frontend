@@ -130,11 +130,11 @@ jobs:
           docker push "${DOCKER_TAG}"
 
       # Debug kustomize
-      - name: Debug kustomize
-        run: |
-          ls -l ./kustomize
-          file ./kustomize
-          uname -a
+     # - name: Debug kustomize
+    #    run: |
+     #     ls -l ./kustomize
+      #    file ./kustomize
+       #   uname -a
 
       - name: Debug workspace
         run: |
