@@ -1,12 +1,19 @@
 import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import NavBarComponent from "./components/NavBarComponent";
+import HomePage from "./pages/HomePage";
+import ProjectsPage from "./pages/ProjectsPage";
+import AboutPage from "./pages/AboutPage";
 
 function App() {
   return (
     <div>
-      <h1>Velkommen til kodebenken.no</h1>
-      <div className="image-container">
-        <img src="src/assets/bench.jpg"></img>
-      </div>
+      <NavBarComponent />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/about" element={<AboutPage />} />
+      </Routes>
     </div>
   );
 }
