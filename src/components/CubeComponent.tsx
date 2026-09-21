@@ -1,20 +1,20 @@
 import * as THREE from "three";
 import { useEffect, useRef } from "react";
 
-export default function ThreeTestComponent() {
+export default function CubeComponent() {
   const containerRef = useRef<HTMLDivElement>(null);
   const animationIdRef = useRef<number | null>(null);
 
   useEffect(() => {
     if (!containerRef.current) return;
 
-    const width = 400;
-    const height = 400;
+    const width = 600;
+    const height = 600;
 
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0x222222);
 
-    const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000); //fov, aspect, near, far
     camera.position.z = 3;
 
     const renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -22,7 +22,7 @@ export default function ThreeTestComponent() {
     containerRef.current.appendChild(renderer.domElement);
 
     const geometry = new THREE.BoxGeometry();
-    const material = new THREE.MeshStandardMaterial({ color: 0x00ff88 });
+    const material = new THREE.MeshStandardMaterial({ color: 0xaa3bff });
     const cube = new THREE.Mesh(geometry, material);
     scene.add(cube);
 
@@ -55,5 +55,5 @@ export default function ThreeTestComponent() {
     };
   }, []);
 
-  return <div ref={containerRef} />;
+  return <div className="cube-container" ref={containerRef} />;
 }

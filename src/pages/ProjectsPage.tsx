@@ -1,11 +1,10 @@
-import ThreeTestComponent from "../components/ThreeTestComponent";
+import ProjectList from "../components/ProjectList";
 
 export default function ProjectsPage() {
   return (
     <div>
       <h1>Prosjekter</h1>
-
-      <ThreeTestComponent></ThreeTestComponent>
+      <ProjectList></ProjectList>
     </div>
   );
 }
