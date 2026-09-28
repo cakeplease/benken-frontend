@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import "./ProjectList.css";
 
 export default function ProjectList() {
   return (

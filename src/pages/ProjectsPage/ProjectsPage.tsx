@@ -1,4 +1,5 @@
-import ProjectList from "../components/ProjectList";
+import ProjectList from "../../components/ProjectList/ProjectList";
+import "./ProjectsPage.css";
 
 export default function ProjectsPage() {
   return (

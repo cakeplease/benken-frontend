@@ -1,5 +1,6 @@
 import * as THREE from "three";
 import { useEffect, useRef } from "react";
+import "./CubeComponent.css";
 
 export default function CubeComponent() {
   const containerRef = useRef<HTMLDivElement>(null);
