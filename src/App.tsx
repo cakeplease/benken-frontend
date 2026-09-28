@@ -1,11 +1,11 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import NavBarComponent from "./components/NavBarComponent";
-import HomePage from "./pages/HomePage";
-import ProjectsPage from "./pages/ProjectsPage";
-import AboutPage from "./pages/AboutPage";
-import CubeProjectPage from "./pages/CubeProjectPage";
-import SolarSystemPage from "./pages/SolarSystemPage";
+import NavBarComponent from "./components/NavBarComponent/NavBarComponent";
+import HomePage from "./pages/HomePage/HomePage";
+import ProjectsPage from "./pages/ProjectsPage/ProjectsPage";
+import AboutPage from "./pages/AboutPage/AboutPage";
+import CubeProjectPage from "./pages/CubeProjectPage/CubeProjectPage";
+import SolarSystemPage from "./pages/SolarSystemPage/SolarSystemPage";
 
 function App() {
   return (
